@@ -21,11 +21,11 @@ on:
       repo_url:
         description: 'REPO URL'
         required: true
-        default: 'https://github.com/openwrt/openwrt'
+        default: 'https://github.com/sacbenet/openwrt'
       repo_branch:
         description: 'REPO BRANCH'
         required: true
-        default: 'v23.03.5'
+        default: 'v23.02.5'
       patch_version:
         description: 'PATCH VERSION'
         required: true
