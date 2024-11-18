@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: bdop-23.02.5
+name: bdop-23.05.5
 
 on:
   repository_dispatch:
@@ -25,11 +25,11 @@ on:
       repo_branch:
         description: 'REPO BRANCH'
         required: true
-        default: 'v23.02.5'
+        default: 'v23.05.5'
       patch_version:
         description: 'PATCH VERSION'
         required: true
-        default: 'v23.02.5'
+        default: 'v23.05.5'
       config_file:
         description: 'CONFIG FILE'
         required: true
