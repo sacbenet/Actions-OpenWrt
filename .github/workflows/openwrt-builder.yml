@@ -65,8 +65,7 @@ jobs:
         cd openwrt
         [ -n $REPO_TAG ] && (
         git checkout $REPO_TAG
-        cp -rfv ../tag/$REPO_TAG/* ./
-        mv conifg .config
+        cp -rfv ../tag/$REPO_TAG/* ./ && mv conifg .config
         )
 
     - name: Load custom feeds
