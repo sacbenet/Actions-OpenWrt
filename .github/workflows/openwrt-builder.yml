@@ -26,7 +26,7 @@ env:
   REPO_BRANCH: openwrt-23.05
   REPO_TAG: v23.05.5
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config
+  CONFIG_FILE: $REPO_TAG/config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -65,11 +65,12 @@ jobs:
         cd openwrt
         [ -n $REPO_TAG ] && (
         git checkout $REPO_TAG
-        cp -rfv ../tag/$REPO_TAG/* ./ && mv conifg .config
+        cp -rfv $GITHUB_WORKSPACE/tag/$REPO_TAG/* $GITHUB_WORKSPACE/openwrt
         )
 
     - name: Load custom feeds
       run: |
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
