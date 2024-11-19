@@ -65,7 +65,7 @@ jobs:
         cd openwrt
         [ -n $REPO_TAG ] && (
         git checkout $REPO_TAG
-        cp -rfv $GITHUB_WORKSPACE/tag/$REPO_TAG/* $GITHUB_WORKSPACE/openwrt                
+        cp -rfv $GITHUB_WORKSPACE/tag/$REPO_TAG/* $GITHUB_WORKSPACE/openwrt
         )
 
     - name: Load custom feeds
