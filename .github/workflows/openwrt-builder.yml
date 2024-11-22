@@ -62,8 +62,8 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         cd openwrt
-        cp -rfv $GITHUB_WORKSPACE/tag/v23.05.5/target openwrt
         git checkout v23.05.5
+        cp -rfv $GITHUB_WORKSPACE/tag/v23.05.5/target openwrt
         
     - name: Load custom feeds
       run: |
