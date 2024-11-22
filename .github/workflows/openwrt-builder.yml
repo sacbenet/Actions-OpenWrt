@@ -22,7 +22,7 @@ on:
         default: 'true'
 
 env:
-  REPO_URL: https://github.com/sacbenet/openwrt
+  REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: openwrt-23.05
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
@@ -61,6 +61,8 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        cp -rf tag openwrt
+        git checkout v23.05.5
         
     - name: Load custom feeds
       run: |
